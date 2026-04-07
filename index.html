@@ -322,6 +322,15 @@ h2{
 }
 .feature-title{font-family:'Rajdhani',sans-serif;font-weight:600;font-size:1.1rem;letter-spacing:.03em;color:var(--text);margin-bottom:.4rem;}
 .feature-desc{font-size:.84rem;color:var(--text-muted);line-height:1.65;font-weight:400;}
+.feature-cta{
+  display:inline-flex;align-items:center;gap:.35rem;
+  margin-top:.875rem;font-size:.78rem;font-weight:600;
+  color:var(--purple);text-decoration:none;
+  border:1px solid rgba(123,97,255,.3);border-radius:6px;
+  padding:.28rem .75rem;
+  transition:background .2s,border-color .2s,box-shadow .2s;
+}
+.feature-cta:hover{background:var(--purple-pale);border-color:var(--purple);box-shadow:0 0 12px rgba(123,97,255,.2)}
 .feature-tag{
   display:inline-block;margin-top:.875rem;padding:.18rem .55rem;border-radius:4px;
   font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
@@ -499,7 +508,7 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
 <div class="beta-banner" id="beta-banner">
   <div class="beta-banner-dot"></div>
   <span><strong>Early Beta</strong> — RiftAI is actively being developed. Expect rough edges.</span>
-  <span class="banner-text-secondary">&nbsp;·&nbsp;<a href="https://discord.com/oauth2/authorize?client_id=1457128015397130470" target="_blank" rel="noopener">Add to your Discord →</a></span>
+  <span class="banner-text-secondary">&nbsp;·&nbsp;<a href="https://discord.com/oauth2/authorize?client_id=1457128015397130470" target="_blank" rel="noopener">Add to Discord</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://discord.gg/FR8qJV78B" target="_blank" rel="noopener">Join the community →</a></span>
   <button class="banner-close" onclick="dismissBanner()" aria-label="Dismiss banner">×</button>
 </div>
 
@@ -510,10 +519,10 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
   </a>
   <div class="nav-links">
     <a href="#features">Features</a>
-    <a href="#how-to-use">How to Use</a>
+    <a href="#support">Support</a>
     <a href="#screenshots">In Action</a>
     <a href="#about">About</a>
-    <a href="#support">Support</a>
+    <a href="#tip">Fuel Development</a>
     <a href="#legal">Privacy</a>
     <a href="https://discord.com/oauth2/authorize?client_id=1457128015397130470" target="_blank" rel="noopener" class="nav-cta">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.054a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
@@ -528,10 +537,10 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
 <!-- Mobile nav drawer -->
 <div class="mobile-nav-drawer" id="mobile-drawer">
   <a href="#features" onclick="closeMobileNav()">Features</a>
-  <a href="#how-to-use" onclick="closeMobileNav()">How to Use</a>
+  <a href="#support" onclick="closeMobileNav()">Support</a>
   <a href="#screenshots" onclick="closeMobileNav()">In Action</a>
   <a href="#about" onclick="closeMobileNav()">About</a>
-  <a href="#support" onclick="closeMobileNav()">Support</a>
+  <a href="#tip" onclick="closeMobileNav()">Fuel Development</a>
   <a href="#legal" onclick="closeMobileNav()">Privacy</a>
   <a href="https://discord.com/oauth2/authorize?client_id=1457128015397130470" target="_blank" rel="noopener" class="mobile-cta">Add to Discord →</a>
 </div>
@@ -636,14 +645,20 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
   </div>
 </section>
 
-<!-- ── HOW TO USE ─────────────────────────────────────────── -->
-<section id="how-to-use">
+<!-- ── SUPPORT ─────────────────────────────────────────────── -->
+<section id="support">
   <div class="section-header">
-    <div class="section-label">How to use</div>
-    <h2>RiftAI in your Discord</h2>
-    <p class="section-intro">Type any of these commands in any channel. No setup, no permissions beyond "Send Messages".</p>
+    <div class="section-label">Support</div>
+    <h2>Get help &amp;<br>join the community</h2>
+    <p class="section-intro">Have a question, found a bug, or want to suggest a feature? The support Discord is the fastest way to get answers. Everything else below is everything the bot can do.</p>
   </div>
   <div class="features-grid">
+    <div class="feature-card reveal">
+      <div class="feature-icon">💬</div>
+      <div class="feature-title">Community &amp; Help</div>
+      <div class="feature-desc">Got a bug, a feature idea, or just want to chat with other players? The support server is the fastest way to get answers.</div>
+      <a href="https://discord.gg/FR8qJV78B" target="_blank" rel="noopener" class="feature-cta">Join Discord →</a>
+    </div>
     <div class="feature-card reveal">
       <div class="feature-icon">🔍</div>
       <div class="feature-title"><code>/rift card</code></div>
@@ -790,9 +805,9 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
   </div>
 </section>
 
-<!-- ── SUPPORT ───────────────────────────────────────────── -->
-<section class="support-bg" id="support">
-  <div class="section-label">Support the project</div>
+<!-- ── FUEL DEVELOPMENT ───────────────────────────────────── -->
+<section class="support-bg" id="tip">
+  <div class="section-label">Fuel development</div>
   <h2>RiftAI is free.<br>Help keep it going.</h2>
   <div class="support-inner">
     <div class="support-left reveal">
@@ -879,11 +894,12 @@ Buy me a Red Bull
     </div>
     <div class="footer-links">
       <a href="#features">Features</a>
-      <a href="#how-to-use">How to Use</a>
+      <a href="#support">Support</a>
       <a href="#screenshots">In Action</a>
       <a href="#about">About</a>
-      <a href="#support">Support</a>
+      <a href="#tip">Fuel Development</a>
       <a href="#legal">Privacy</a>
+      <a href="https://discord.gg/FR8qJV78B" target="_blank" rel="noopener">Discord Support</a>
     </div>
     <a href="https://discord.com/oauth2/authorize?client_id=1457128015397130470" target="_blank" rel="noopener" class="footer-discord">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.054a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
