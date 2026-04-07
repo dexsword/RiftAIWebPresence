@@ -14,7 +14,7 @@
 
 - All styles are in a single `<style>` block in `<head>`. No external stylesheet.
 - All scripts are in a single `<script>` block at the bottom of `<body>`. No bundler.
-- Fonts: `Syne` (headings/numbers) and `DM Sans` (body) — loaded from Google Fonts.
+- Fonts: `Rajdhani` (headings/numbers) and `Inter` (body) — loaded from Google Fonts.
 - CSS custom properties on `:root` — never hardcode hex values, use the variables.
 - Key variables: `--ink`, `--gold`, `--gold-light`, `--gold-pale`, `--accent`, `--surface`, `--border`, `--r`, `--r-lg`, `--banner-h`, `--nav-h`.
 
