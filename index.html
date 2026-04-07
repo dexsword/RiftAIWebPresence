@@ -280,6 +280,14 @@ h2{
   max-width:540px;margin-top:.875rem;font-weight:400;line-height:1.75;
 }
 .section-header{margin-bottom:3.5rem}
+.section-footnote{
+  text-align:center;font-size:.85rem;color:var(--text-muted);
+  margin-top:2.5rem;line-height:1.7;
+}
+.section-footnote code{
+  background:var(--panel-raised);padding:.1em .35em;
+  border-radius:4px;font-size:.9em;color:var(--gold);
+}
 
 /* ── FEATURES ────────────────────────────────────────────── */
 .features-bg{background:var(--bg-alt)}
@@ -492,6 +500,7 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
   <a href="#home" class="nav-logo">Rift<span>AI</span></a>
   <div class="nav-links">
     <a href="#features">Features</a>
+    <a href="#how-to-use">How to Use</a>
     <a href="#screenshots">In Action</a>
     <a href="#about">About</a>
     <a href="#support">Support</a>
@@ -509,6 +518,7 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
 <!-- Mobile nav drawer -->
 <div class="mobile-nav-drawer" id="mobile-drawer">
   <a href="#features" onclick="closeMobileNav()">Features</a>
+  <a href="#how-to-use" onclick="closeMobileNav()">How to Use</a>
   <a href="#screenshots" onclick="closeMobileNav()">In Action</a>
   <a href="#about" onclick="closeMobileNav()">About</a>
   <a href="#support" onclick="closeMobileNav()">Support</a>
@@ -613,6 +623,48 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
       <span class="feature-tag tag-soon">Coming Soon</span>
     </div>
   </div>
+</section>
+
+<!-- ── HOW TO USE ─────────────────────────────────────────── -->
+<section id="how-to-use">
+  <div class="section-header">
+    <div class="section-label">How to use</div>
+    <h2>RiftAI in your Discord</h2>
+    <p class="section-intro">Type any of these commands in any channel. No setup, no permissions beyond "Send Messages".</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <div class="feature-icon">🔍</div>
+      <div class="feature-title"><code>/rift card</code></div>
+      <div class="feature-desc">Look up any card by name or ID. Returns rules text, type, and cost — instantly.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">📊</div>
+      <div class="feature-title"><code>/rift meta</code></div>
+      <div class="feature-desc">See the current meta snapshot: top archetypes, most-played cards, and recent competitive decks.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">🎯</div>
+      <div class="feature-title"><code>/rift build</code></div>
+      <div class="feature-desc">AI-optimized deck builder. Pick your legend and strategy, get a ready-to-play deck in seconds.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">🃏</div>
+      <div class="feature-title"><code>/rift deck search</code></div>
+      <div class="feature-desc">Search harvested competitive decks by legend, card, or archetype — ranked by quality and recency.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">🔗</div>
+      <div class="feature-title"><code>/rift synergy</code></div>
+      <div class="feature-desc">Find which cards most commonly pair with a given card in the current meta.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">❓</div>
+      <div class="feature-title"><code>/rift explain</code></div>
+      <div class="feature-desc">Plain-English explanations for any card, grounded to the official rules text.</div>
+    </div>
+  </div>
+  <p class="section-footnote">AI features (<code>/build</code>, <code>/counter</code>, <code>/matchup</code>, <code>/explain</code>, <code>/synergy</code>) require OpenAI API to be configured.</p>
 </section>
 
 <!-- ── SCREENSHOTS ───────────────────────────────────────── -->
@@ -816,6 +868,7 @@ Buy me a Red Bull
     </div>
     <div class="footer-links">
       <a href="#features">Features</a>
+      <a href="#how-to-use">How to Use</a>
       <a href="#screenshots">In Action</a>
       <a href="#about">About</a>
       <a href="#support">Support</a>
