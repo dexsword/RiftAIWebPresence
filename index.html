@@ -597,7 +597,7 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
     <div class="feature-card reveal">
       <div class="feature-icon">📊</div>
       <div class="feature-title">Meta Snapshot</div>
-      <div class="feature-desc">See the top legends, most-played cards, and archetype breakdown for Set 2 (current) or Set 3 (preview). Filtered to legal decks only, sourced from tournament players.</div>
+      <div class="feature-desc">See the top legends, most-played cards, and archetype breakdown for the current format, Set 2 previous format, or Set 1 legacy. Illegal banned decks are excluded from Standard views.</div>
       <span class="feature-tag tag-live">Live</span>
     </div>
     <div class="feature-card reveal">
@@ -615,7 +615,7 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
     <div class="feature-card reveal">
       <div class="feature-icon">🃏</div>
       <div class="feature-title">AI Deck Builder</div>
-      <div class="feature-desc">Generate a statistically optimized 40-card deck for any legend. Weighted by gold/silver tier tournament data and falls back to the synergy engine when data is sparse.</div>
+      <div class="feature-desc">Generate a Standard-legal deck for any legend, strategy, requested cards, or a specific anchor card. The builder blends harvested deck data, card intelligence, ban checks, and curve validation.</div>
       <span class="feature-tag tag-live">Live</span>
     </div>
     <div class="feature-card reveal">
@@ -627,20 +627,20 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
     <div class="feature-card reveal">
       <div class="feature-icon">🏆</div>
       <div class="feature-title">Quality Scoring</div>
-      <div class="feature-desc">Every deck gets an AI score (0–100) based on internal synergy, mana curve consistency, and gameplan coherence. Tournament results inform the gold tier baseline.</div>
+      <div class="feature-desc">Every harvested deck gets a deterministic 0–100 quality score from completeness, copy consistency, popularity alignment, and co-occurrence strength. Ratings power deck search and shell ranking.</div>
       <span class="feature-tag tag-live">Live</span>
     </div>
     <div class="feature-card reveal">
       <div class="feature-icon">🎯</div>
       <div class="feature-title">Counter Builder</div>
-      <div class="feature-desc">Given an archetype or legend, generate an anti-meta deck optimized to beat it. Coming once the dataset reaches the threshold needed for reliable counter-predictions.</div>
-      <span class="feature-tag tag-soon">Coming Soon</span>
+      <div class="feature-desc">Given an archetype or legend, generate an anti-meta deck plan and list. You can let the bot choose the legend or provide your own preferred legend.</div>
+      <span class="feature-tag tag-live">Live</span>
     </div>
     <div class="feature-card reveal">
-      <div class="feature-icon">🌐</div>
-      <div class="feature-title">Web Dashboard</div>
-      <div class="feature-desc">A full browser-based meta dashboard with tier lists, frequency charts, synergy graphs, and deck browser. Planned for a later phase of development.</div>
-      <span class="feature-tag tag-soon">Coming Soon</span>
+      <div class="feature-icon">⚖️</div>
+      <div class="feature-title">Deck Comparison</div>
+      <div class="feature-desc">Compare two harvested decks, or compare a harvested deck against a pasted import list. The bot calls out card overlap, package differences, curve shifts, and matchup-specific tradeoffs.</div>
+      <span class="feature-tag tag-live">Live</span>
     </div>
   </div>
 </section>
@@ -662,17 +662,22 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
     <div class="feature-card reveal">
       <div class="feature-icon">🔍</div>
       <div class="feature-title"><code>/rift card</code></div>
-      <div class="feature-desc">Look up any card by name/ID, or search in natural language (e.g. "yellow legends" or "orange dragons"). Returns rules text, type, and cost — instantly.</div>
+      <div class="feature-desc">Look up any card by name, ID, or natural language search. Supports <code>set:current</code>, <code>set:set1</code>, <code>set:set2</code>, <code>set:set3</code>, and <code>set:all</code>.</div>
     </div>
     <div class="feature-card reveal">
       <div class="feature-icon">📊</div>
       <div class="feature-title"><code>/rift meta</code></div>
-      <div class="feature-desc">See the current meta snapshot: top archetypes, most-played cards, and recent competitive decks.</div>
+      <div class="feature-desc">See the current meta snapshot: dataset size, legal deck count, top archetypes, most-played cards, and recent competitive decks.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">📈</div>
+      <div class="feature-title"><code>/rift top_cards</code></div>
+      <div class="feature-desc">Show the top played maindeck cards by set and source quality. Use tier filters like <code>competitive</code>, <code>gold</code>, <code>silver</code>, or <code>all</code>.</div>
     </div>
     <div class="feature-card reveal">
       <div class="feature-icon">🎯</div>
       <div class="feature-title"><code>/rift build</code></div>
-      <div class="feature-desc">AI-optimized deck builder. Pick your legend and strategy, get a ready-to-play deck in seconds.</div>
+      <div class="feature-desc">AI-optimized deck builder. Pick a legend, strategy, requested cards, or <code>anchor</code> card; strategies include balanced, aggro, midrange, control, ramp, and combo.</div>
     </div>
     <div class="feature-card reveal">
       <div class="feature-icon">🃏</div>
@@ -689,8 +694,28 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
       <div class="feature-title"><code>/rift explain</code></div>
       <div class="feature-desc">Plain-English explanations for any card, grounded to the official rules text.</div>
     </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">📖</div>
+      <div class="feature-title"><code>/rift ask</code></div>
+      <div class="feature-desc">Ask a natural-language rules question grounded in the official rulebook. Optional <code>sources:true</code> shows retrieved source snippets.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">🛡️</div>
+      <div class="feature-title"><code>/rift counter</code></div>
+      <div class="feature-desc">Build an anti-meta deck against a target archetype, with an optional preferred legend and current/previous format selection.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">🧭</div>
+      <div class="feature-title"><code>/rift matchup</code></div>
+      <div class="feature-desc">Get matchup advice for a harvested deck ID against an opponent archetype, including gameplan and sideboard guidance.</div>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">⚖️</div>
+      <div class="feature-title"><code>/rift deck compare</code></div>
+      <div class="feature-desc">Compare two harvested decks by ID, or use <code>/rift deck compare_paste</code> to compare against a pasted import-format decklist.</div>
+    </div>
   </div>
-  <p class="section-footnote">AI features (<code>/build</code>, <code>/counter</code>, <code>/matchup</code>, <code>/explain</code>, <code>/synergy</code>) require OpenAI API to be configured.</p>
+  <p class="section-footnote">AI/rules features (<code>/rift ask</code>, <code>/rift build</code>, <code>/rift counter</code>, <code>/rift matchup</code>, and <code>/rift explain</code>) require OpenAI configuration. <code>/rift synergy</code> requires Postgres + pgvector data.</p>
 </section>
 
 <!-- ── SCREENSHOTS ───────────────────────────────────────── -->
@@ -705,7 +730,7 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
       <div class="screenshot-mockup">
         <div class="mock-bar"><div class="mock-dot r"></div><div class="mock-dot y"></div><div class="mock-dot g"></div></div>
         <div class="mock-embed">
-          <div class="mock-title">🔥 Riftbound Meta — Set 2 (Current)</div>
+          <div class="mock-title">🔥 Riftbound Meta — Current</div>
           <div class="mock-line w80"></div><div class="mock-line w60"></div>
           <div style="margin-top:.75rem;font-size:.68rem;color:rgba(255,255,255,.45)">Top Legends</div>
           <div class="mock-line w70" style="margin-top:.4rem;background:rgba(201,146,42,.4)"></div>
@@ -791,7 +816,7 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
     <div class="about-right reveal">
       <div class="about-card">
         <div class="about-card-title">🔧 How it was built</div>
-        <p>RiftAI is a solo project built from scratch — Node.js, Discord.js, PostgreSQL with pgvector, SQLite, and OpenAI APIs. The harvester pulls decklists from Piltover Archive every 6 hours, classifies them by format and quality tier, and feeds a vector-similarity synergy engine backed by card embeddings.</p>
+        <p>RiftAI is a solo project built from scratch — Node.js, Discord.js, PostgreSQL with pgvector, SQLite, and OpenAI APIs. The harvester pulls decklists from Piltover Archive, RiftboundStats, and accepted community sources, classifies them by format and quality tier, and feeds vector search, deck scoring, and the synergy engine.</p>
       </div>
       <div class="about-card">
         <div class="about-card-title">📍 Where it's played</div>
@@ -799,7 +824,7 @@ footer{background:#070910;padding:3rem 5vw 2.5rem;border-top:1px solid var(--bor
       </div>
       <div class="about-card">
         <div class="about-card-title">🗺️ What's next</div>
-        <p>Active development. Next priorities: counter builder, Set 3 support when Unleashed launches, a web dashboard for deeper browsing, and ongoing dataset growth every 6 hours.</p>
+        <p>Active development. Current priorities: improving counter and matchup quality, expanding card-intelligence coverage, keeping Standard legality current, and building a future web dashboard for deeper browsing.</p>
       </div>
     </div>
   </div>
@@ -861,7 +886,7 @@ Buy me a Red Bull
     <h3>How We Use Your Data</h3>
     <p>Data is used exclusively to operate the bot — enforce rate limits, return personalized responses, and improve features. We do not sell, share, or monetize your data with any third parties.</p>
     <h3>Third-Party Services</h3>
-    <p>RiftAI uses the OpenAI API to generate card explanations and quality scores. Command inputs related to those features are processed by OpenAI subject to their privacy policy. Deck data is sourced from Piltover Archive (piltoverarchive.com), a public community resource.</p>
+    <p>RiftAI uses the OpenAI API for card explanations, rules Q&amp;A, deck building, counter decks, and matchup advice. Command inputs related to those features are processed by OpenAI subject to their privacy policy. Deck data is sourced from public community resources including Piltover Archive, RiftboundStats, and submitted deck URLs.</p>
     <h3>Data Retention</h3>
     <p>Usage counters reset daily. No persistent user profiles are maintained beyond what is necessary to operate tier access. You may request deletion of your data at any time by contacting us via Discord.</p>
     <h3>Contact</h3>
